@@ -6,7 +6,7 @@ window.onload = () => {
 
 async function init() {
     const peer = createPeer();
-    peer.addTransceiver("video", { direction: "recvonly" })
+    peer.addTransceiver("audio", { direction: "recvonly" })
 }
 
 function createPeer() {
@@ -36,6 +36,6 @@ async function handleNegotiationNeededEvent(peer) {
 }
 
 function handleTrackEvent(e) {
-    document.getElementById("video").srcObject = e.streams[0];
+    document.getElementById("audio").srcObject = e.streams[0];
 };
 
